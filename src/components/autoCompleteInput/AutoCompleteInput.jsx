@@ -21,10 +21,32 @@ const AutoCompleteInput = ({suggestions, onSelect}) => {
         };
     };
 
+    const handleSelect = (suggestion) => {
+        setInputValue(suggestion.name);
+        setFilterSuggestions([]);
+        onSelect(suggestion.id);
+    }
+
     return (
         <div className="autocomplete">
             <input type="text" value={inputValue} onChange={handleChange} className='autocomplete__input' />
-
+            {
+                filterSuggestions.length > 0 && (
+                    <ul className='autocomplete__list'>
+                        {
+                            filterSuggestions.map((suggestion) => (
+                                <li 
+                                    key={suggestion.id}
+                                    onClick={() => handleSelect(suggestion)}
+                                    className='autocomplete__list-item'
+                                >
+                                    {suggestion.name}
+                                </li>
+                            ))
+                        }
+                    </ul>
+                )
+            }
         </div>
     );
 };
