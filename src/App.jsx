@@ -3,6 +3,7 @@ import './App.css'
 import useFetch from './hooks/useFetch';
 import LocationCard from './components/location/LocationCard';
 import ResidentCard from './components/residentCard/ResidentCard';
+import AutoCompleteInput from './components/autoCompleteInput/AutoCompleteInput';
 
 function App() {
   const randomId = Math.floor(Math.random() * 126) + 1;
@@ -20,11 +21,11 @@ function App() {
     e.preventDefault();
     setInputValue(textInput.current.value.trim().toLowerCase());
     textInput.current.value = '';
-  }
+  };
 
-
-
-
+  const handleSelect = (id) => {
+    setInputValue(id);
+  };
 
   return (
     <div className='app'>
