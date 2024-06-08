@@ -1,0 +1,87 @@
+/* App */
+:root {
+    --bg-color: #05292e;
+    --color-btn: #71a821;
+    --color-black: #000;
+    --color-txt-btn: #fff;
+}
+
+.app {
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+.app__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__loading {
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+
+.app__loading-img {
+    width: 450px;
+    height: auto;
+    border: none;
+}
+
+.app__residents {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin: 0 40px;
+    width: 80vw;
+    padding-bottom: 50px;
+}
+
+.app__title {
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 0 10px var(--color-btn);
+}
+
+.app__title-img {
+    background-image: url('../assets/images/rick-and-morty-portal-space-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 30vh;
+}
+
+.app__form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app__form-input {
+    border-radius: 7px 0 0 7px;
+}
+
+.app__form-btn {
+    border-radius: 0 7px 7px 0;
+    padding: 5px 15px;
+    background-color: var(--color-btn);
+    color: var(--color-txt-btn);
+}
+
+@media (width < 800px) {
+    .app__title-img {
+        background-image: url('../assets/images/rick-and-morty-portal-space-2.jpg');
+    }
+}
+
+

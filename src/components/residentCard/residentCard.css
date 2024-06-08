@@ -1,0 +1,86 @@
+:root {
+    --bg-status: #072226d5;
+    --bg-card: #072226;
+    --color-border: #3b3b3b5a;
+    --color-txt: #f6f7f7;
+    --color-details: #9d9e9e;
+    --shadow-plasma: #71a821;
+}
+
+.residentCard {
+    width: 250px;
+    min-height: 460px;
+    border: 1px solid var(--color-border);
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 7.5px var(--color-border);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.residentCard:hover {
+    transform: scale(1.025);
+    box-shadow: 0 0 15px var(--shadow-plasma);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.residentCard__img {
+    position: relative;
+}
+
+.residentCard__status {
+    position: absolute;
+    top: 10%;
+    background: var(--bg-status);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 2.5px 1.8rem 2.5px 5px;
+    border-radius: 0 5px 5px 0;
+}
+
+.residentCard__circle {
+    width: 15px;
+    aspect-ratio: 1;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.residentCard__name {
+    color: var(--color-txt);
+    text-align: center;
+    margin-top: 5px;
+}
+
+.centered-hr {
+    width: 80%;
+    margin: 10px auto;
+    opacity: 40%;
+}
+
+.residentCard__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.residentCard__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.residentCard__item span {
+    font-weight: 400;
+    margin-bottom: 4px;
+    margin: 0 20px;
+}
+
+.residentCard__item span:first-child {
+    margin-left: 40px;
+    color: var(--color-txt);
+}
+
+.residentCard__item span:last-child {
+    margin-bottom: 10px;
+    color: var(--color-details);
+}
