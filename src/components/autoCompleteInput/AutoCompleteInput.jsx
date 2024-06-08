@@ -8,6 +8,7 @@ const AutoCompleteInput = ({suggestions, onSelect}) => {
     const [filterSuggestions, setFilterSuggestions] = useState([]);
     return (
         <div className="autocomplete">
+            <input type="text" value={inputValue} onChange={''} className='autocomplete__input' />
             
         </div>
     );
