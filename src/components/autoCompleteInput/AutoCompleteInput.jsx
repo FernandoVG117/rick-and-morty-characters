@@ -10,6 +10,15 @@ const AutoCompleteInput = ({suggestions, onSelect}) => {
     const handleChange = (e) => {
         const value = e.target.value;
         setInputValue(value);
+
+        if (value) {
+            const filtered = suggestions.filter((suggestion) => {
+                suggestion.name.toLowerCase().includes(value.toLowerCase());
+            });
+            setFilterSuggestions(filtered);
+        } else {
+            setFilterSuggestions([]);
+        };
     };
 
     return (
