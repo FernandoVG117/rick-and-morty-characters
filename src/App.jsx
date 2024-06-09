@@ -3,6 +3,7 @@ import './App.css'
 import useFetch from './hooks/useFetch';
 import LocationCard from './components/location/LocationCard';
 import ResidentCard from './components/residentCard/ResidentCard';
+import LocationSearch from './components/locationSearch/LocationSearch';
 
 function App() {
   const randomId = Math.floor(Math.random() * 126) + 1;
@@ -14,6 +15,7 @@ function App() {
     getLocation(url);
   }, [inputValue]);
 
+  //
   const textInput = useRef();
 
   const handleSubmit = (e) => {
@@ -21,8 +23,13 @@ function App() {
     setInputValue(textInput.current.value.trim().toLowerCase());
     textInput.current.value = '';
   }
+  //
 
+  const handleSearch = (id) => {
+    setInputValue(id);
+  };
 
+//  console.log(location)
 
 
 
@@ -37,11 +44,14 @@ function App() {
         : 
           <div className='app__container'>
             <div className="app__title-img"></div>
-            {/* <h1 className='app__title'>Rick and Morty</h1> */}
-            <form onSubmit={handleSubmit} className='app__form'>
-              <input type="number" ref={textInput} className='app__form-input'  />
+
+            {/* <form onSubmit={handleSubmit} className='app__form'>
+              <input type="number" ref={textInput} className='app__form-input' placeholder='Enter a number'  />
               <button className='app__form-btn'>Search</button>
-            </form>
+            </form> */}
+
+            <LocationSearch onSearch={handleSearch} />
+
             {
               hasError || !+inputValue ? 
                 <h2>❌ Hey! you most provide an id from 1 to 126 😢</h2>
