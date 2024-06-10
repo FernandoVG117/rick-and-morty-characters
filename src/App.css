@@ -2,7 +2,7 @@
 :root {
     --bg-color: #05292e;
     --color-btn: #71a821;
-    --color-black: #000;
+    --color-black: #f9f4f4;
     --color-txt-btn: #fff;
 }
 
@@ -25,13 +25,13 @@
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-color);
+    background: #000000;
 }
 
 .app__loading-img {
     width: 450px;
     height: auto;
-    border: none;
+    border: 3px solid transparent;
 }
 
 .app__residents {
