@@ -10,6 +10,7 @@ function App() {
   const randomId = Math.floor(Math.random() * 126) + 1;
   const [inputValue, setInputValue] = useState(randomId);
   const [location, getLocation, isLoading, hasError] = useFetch();
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/location/${inputValue}`;
@@ -31,6 +32,21 @@ function App() {
   };
 
 //  console.log(location)
+
+  // Pagination
+  const quantity = 8;
+  const total = Math.ceil(location?.residents.length / quantity);
+  // console.log(total);
+  // console.log(Math.ceil(location?.residents.length));
+
+  const pagination = () => {
+    const end = quantity * page;
+    const start = end - quantity;
+    const limit = location?.residents.slice(start, end);
+
+    return [limit];
+  };
+
 
 
 
