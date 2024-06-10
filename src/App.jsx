@@ -29,6 +29,7 @@ function App() {
 
   const handleSearch = (id) => {
     setInputValue(id);
+    setPage(1);
   };
 
   // Pagination
