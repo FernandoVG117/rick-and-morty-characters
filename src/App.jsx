@@ -4,6 +4,7 @@ import useFetch from './hooks/useFetch';
 import LocationCard from './components/location/LocationCard';
 import ResidentCard from './components/residentCard/ResidentCard';
 import LocationSearch from './components/locationSearch/LocationSearch';
+import Pagination from './components/pagination/Pagination';
 
 function App() {
   const randomId = Math.floor(Math.random() * 126) + 1;
@@ -60,6 +61,11 @@ function App() {
                   <LocationCard 
                     info={location}
                   />
+
+                  <Pagination 
+                    
+                  />
+
                   <div className="app__residents">
                     {
                       location?.residents.map((character) => (
