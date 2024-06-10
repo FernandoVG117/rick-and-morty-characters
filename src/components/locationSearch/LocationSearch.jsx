@@ -65,24 +65,34 @@ const LocationSearch = ({ onSearch }) => {
           value={query}
           onChange={handleInputChange}
           className="search-input__input"
-          placeholder="Search location..."
+          placeholder="Search location here 👽"
         />
         <button type="submit" className="search-input__button">Search</button>
       </form>
-      {error && <div className="search-input__suggestions-error"><span className="search-input__error">{error}</span><span className='search-input__error'>Please, try with other words.</span></div>}
-      {showSuggestions && (
-        <ul className="search-input__suggestions">
-          {suggestions.map((suggestion) => (
-            <li
-              key={suggestion.id}
-              onClick={() => handleSuggestionClick(suggestion)}
-              className="search-input__suggestion-item"
-            >
-              {suggestion.name}
-            </li>
-          ))}
-        </ul>
-      )}
+      {
+        error && 
+          <div className="search-input__suggestions-error">
+            <span className="search-input__error">{error}</span>
+            <span className='search-input__error'>Please, try with other words.</span>
+          </div>
+      }
+      {
+        showSuggestions && (
+          <ul className="search-input__suggestions">
+            {
+              suggestions.map((suggestion) => (
+                <li
+                  key={suggestion.id}
+                  onClick={() => handleSuggestionClick(suggestion)}
+                  className="search-input__suggestion-item"
+                >
+                  {suggestion.name}
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
     </div>
   )
 }
