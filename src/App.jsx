@@ -91,6 +91,13 @@ function App() {
                       ))
                     }
                   </div>
+
+                  <Pagination 
+                    page={page}
+                    setPage={setPage}
+                    total={total}
+                    
+                  />
                 </>
             }
           </div>
