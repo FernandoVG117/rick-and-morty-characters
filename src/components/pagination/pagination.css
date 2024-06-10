@@ -1,0 +1,39 @@
+:root {
+    --red-test: #ff0000;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+    padding: 10px;
+
+
+    border: 1px solid var(--red-test);
+}
+
+.pagination__container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.pagination__btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.pagination__btn-5 {
+    width: 30px;
+    height: 20px;
+    border-radius: 7.5px;
+}
+
+.pagination__count {
+    font-weight: 400;
+    font-size: 0.85rem;
+    padding-top: 10px;
+}

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './pagination.css';
 
 const Pagination = ({ page, setPage, total }) => {
 
@@ -46,8 +47,19 @@ const Pagination = ({ page, setPage, total }) => {
     };
 
   return (
-    <div>
-      
+    <div className="pagination">
+        <div className='pagination__container'>
+            <button onClick={() => {handlePrev(5)}} className='pagination__btn-5'>{'<<'}</button>
+            <button onClick={() => {handlePrev(1)}} className='pagination__btn'>{'<'}</button>
+            { 
+                renderPages()
+            }
+            <button onClick={() => handleNext(1)} className='pagination__btn'>{'>'}</button>
+            <button onClick={() => handleNext(5)} className='pagination__btn-5'>{'>>'}</button>
+        </div>
+        <div className="pagination__count">
+        <span>{page} / {total}</span>
+        </div>
     </div>
   )
 }

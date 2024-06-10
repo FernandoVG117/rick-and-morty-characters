@@ -31,13 +31,9 @@ function App() {
     setInputValue(id);
   };
 
-//  console.log(location)
-
   // Pagination
   const quantity = 8;
   const total = Math.ceil(location?.residents.length / quantity);
-  // console.log(total);
-  // console.log(Math.ceil(location?.residents.length));
 
   const pagination = () => {
     const end = quantity * page;
@@ -79,12 +75,15 @@ function App() {
                   />
 
                   <Pagination 
+                    page={page}
+                    setPage={setPage}
+                    total={total}
                     
                   />
 
                   <div className="app__residents">
                     {
-                      location?.residents.map((character) => (
+                      pagination()[0]?.map((character) => (
                         <ResidentCard 
                           key={character}
                           info={character}
